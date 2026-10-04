@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>404 — الصفحة غير موجودة | NERO AI</title>
+<link rel="icon" href="logo.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f5f7fb;
+    --card:#ffffff;
+    --text:#0f172a;
+    --muted:#475569;
+    --border:#e6ebf2;
+    --brand1:#3b82f6;
+    --brand2:#7c3aed;
+    --brand3:#a855f7;
+    --shadow:0 10px 30px -12px rgba(15,23,42,.15), 0 4px 12px -6px rgba(15,23,42,.08);
+    --radius:24px;
+    --mono:'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;height:100%}
+  body{
+    font-family:'Cairo','Segoe UI',Tahoma,Arial,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.9;
+    -webkit-font-smoothing:antialiased;
+    min-height:100vh;
+    position:relative;
+    overflow-x:hidden;
+    display:flex;
+    flex-direction:column;
+  }
+  body::before{
+    content:"";
+    position:fixed;
+    inset:-20% -10% auto -10%;
+    height:80vh;
+    background:
+      radial-gradient(60% 60% at 20% 20%, rgba(59,130,246,.20), transparent 60%),
+      radial-gradient(50% 50% at 80% 10%, rgba(168,85,247,.20), transparent 60%),
+      radial-gradient(40% 40% at 50% 30%, rgba(124,58,237,.12), transparent 60%);
+    filter:blur(10px);
+    z-index:-1;
+    pointer-events:none;
+  }
+
+  .wrap{
+    max-width:780px;
+    margin:0 auto;
+    padding:32px 20px 60px;
+    width:100%;
+    flex:1;
+    display:flex;
+    flex-direction:column;
+  }
+
+  /* Top bar */
+  .topbar{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:12px;margin-bottom:28px;
+  }
+  .brand{
+    display:flex;align-items:center;gap:12px;
+    text-decoration:none;color:inherit;
+  }
+  .brand img{
+    width:44px;height:44px;border-radius:12px;
+    box-shadow:0 6px 18px -6px rgba(59,130,246,.55);
+    background:#fff;
+  }
+  .brand .name{font-weight:800;font-size:1.05rem;letter-spacing:.2px}
+  .brand .name span{
+    background:linear-gradient(90deg,var(--brand1),var(--brand2));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .back{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:10px 16px;border-radius:999px;
+    background:#fff;border:1px solid var(--border);
+    color:var(--muted);text-decoration:none;font-size:.9rem;font-weight:600;
+    transition:.2s ease;
+    box-shadow:0 2px 6px -2px rgba(15,23,42,.06);
+  }
+  .back:hover{color:var(--brand2);border-color:#d8c8f7;transform:translateY(-1px)}
+
+  /* Card */
+  .card{
+    background:linear-gradient(135deg,#ffffff 0%, #fbfcff 100%);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:44px 28px 40px;
+    box-shadow:var(--shadow);
+    position:relative;
+    overflow:hidden;
+    text-align:center;
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
+  .card::after{
+    content:"";
+    position:absolute;inset:0;
+    background:
+      radial-gradient(500px 140px at 100% 0%, rgba(124,58,237,.12), transparent 60%),
+      radial-gradient(400px 140px at 0% 100%, rgba(59,130,246,.12), transparent 60%);
+    pointer-events:none;
+  }
+  .card > *{position:relative;z-index:1}
+
+  /* ====== BREAKING 404 STAGE ===== */
+  .stage{
+    position:relative;
+    width:100%;
+    height:clamp(180px, 30vw, 240px);
+    margin:0 auto 12px;
+    display:grid;
+    place-items:center;
+    user-select:none;
+    -webkit-tap-highlight-color:transparent;
+  }
+  .stage-inner{
+    position:relative;
+    display:inline-block;
+    padding:8px 16px;
+  }
+
+  .num{
+    font-size:clamp(5.5rem, 16vw, 9rem);
+    font-weight:900;
+    line-height:1;
+    letter-spacing:-.05em;
+    background:linear-gradient(135deg,var(--brand1) 0%, var(--brand2) 55%, var(--brand3) 100%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    margin:0;
+    filter:drop-shadow(0 12px 28px rgba(124,58,237,.28));
+    transition:transform .35s cubic-bezier(.2,.9,.3,1.4), filter .3s ease;
+    display:inline-block;
+    position:relative;
+    z-index:2;
+  }
+  .stage:hover .num{transform:translateY(-3px) scale(1.01)}
+
+  /* Crack SVG overlay */
+  .cracks{
+    position:absolute;
+    inset:-20px;
+    width:calc(100% + 40px);
+    height:calc(100% + 40px);
+    pointer-events:none;
+    z-index:3;
+    overflow:visible;
+  }
+  .cracks path{
+    stroke:#1e293b;
+    stroke-width:1.6;
+    fill:none;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    opacity:0;
+    filter:drop-shadow(0 0 3px rgba(255,255,255,.9));
+  }
+  .cracks path.shard{
+    stroke:#94a3b8;
+    stroke-width:.9;
+    opacity:0;
+  }
+
+  /* Shattered state */
+  .stage.shattered .num{
+    animation:shatter-shake .35s ease-out;
+  }
+  .stage.shattered .cracks path.main{animation:crack-in .35s ease-out forwards}
+  .stage.shattered .cracks path.shard{animation:crack-in .5s .1s ease-out forwards}
+
+  @keyframes crack-in{
+    0%{opacity:0;stroke-dasharray:0 400}
+    60%{opacity:1}
+    100%{opacity:1;stroke-dasharray:400 400}
+  }
+  @keyframes shatter-shake{
+    0%,100%{transform:translate(0,0)}
+    20%{transform:translate(-2px,1px)}
+    40%{transform:translate(2px,-1px)}
+    60%{transform:translate(-1px,1px)}
+    80%{transform:translate(1px,-1px)}
+  }
+
+  /* Code particles emerging from cracks */
+  .code-zone{
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    z-index:4;
+    overflow:visible;
+  }
+  .snippet{
+    position:absolute;
+    font-family:var(--mono);
+    font-size:clamp(.62rem, 1vw + .4rem, .78rem);
+    font-weight:500;
+    color:#334155;
+    background:rgba(255,255,255,.92);
+    border:1px solid var(--border);
+    padding:3px 8px;
+    border-radius:8px;
+    white-space:nowrap;
+    opacity:0;
+    transform:translate(0,0) scale(.6);
+    box-shadow:0 4px 12px -6px rgba(15,23,42,.18);
+    backdrop-filter:blur(4px);
+  }
+  .snippet .kw{color:#7c3aed;font-weight:600}
+  .snippet .fn{color:#2563eb}
+  .snippet .str{color:#059669}
+  .snippet .cm{color:#94a3b8;font-style:italic}
+
+  .stage.shattered .snippet{
+    animation:burst 1.5s cubic-bezier(.2,.7,.3,1) forwards;
+  }
+  @keyframes burst{
+    0%{opacity:0;transform:translate(0,0) scale(.5) rotate(0)}
+    15%{opacity:1}
+    70%{opacity:1}
+    100%{
+      opacity:0;
+      transform:translate(var(--tx,40px), var(--ty,-40px)) scale(1) rotate(var(--rot,0deg));
+    }
+  }
+
+  h1{
+    font-size:clamp(1.35rem, 2vw + 1rem, 1.75rem);
+    margin:0 0 10px;
+    font-weight:800;
+    letter-spacing:-.3px;
+    line-height:1.5;
+  }
+  h1 .grad{
+    background:linear-gradient(90deg,var(--brand1),var(--brand2) 60%, var(--brand3));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  p.msg{
+    color:var(--muted);
+    margin:0 auto 24px;
+    max-width:52ch;
+    font-size:1rem;
+  }
+
+  /* Actions */
+  .actions{
+    display:flex;flex-wrap:wrap;gap:12px;justify-content:center;
+  }
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;
+    padding:13px 22px;border-radius:999px;
+    text-decoration:none;font-weight:700;font-size:.94rem;
+    transition:.22s ease;
+    border:1px solid transparent;
+    cursor:pointer;
+    font-family:inherit;
+  }
+  .btn svg{width:18px;height:18px}
+  .btn-primary{
+    background:linear-gradient(135deg,var(--brand1),var(--brand2));
+    color:#fff;
+    box-shadow:0 12px 28px -12px rgba(124,58,237,.75);
+  }
+  .btn-primary:hover{transform:translateY(-2px);filter:brightness(1.05);box-shadow:0 16px 34px -12px rgba(124,58,237,.85)}
+
+  /* Suggestions */
+  .suggest{
+    margin-top:30px;
+    padding-top:22px;
+    border-top:1px dashed var(--border);
+  }
+  .suggest h3{
+    font-size:.82rem;
+    font-weight:700;
+    color:var(--muted);
+    text-transform:uppercase;
+    letter-spacing:.8px;
+    margin:0 0 12px;
+  }
+  .chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+  .chip{
+    display:inline-flex;align-items:center;gap:6px;
+    padding:8px 14px;border-radius:999px;
+    background:#fff;border:1px solid var(--border);
+    color:var(--muted);text-decoration:none;font-size:.86rem;font-weight:600;
+    transition:.2s ease;
+    box-shadow:0 1px 3px -1px rgba(15,23,42,.05);
+  }
+  .chip:hover{color:var(--brand2);border-color:#d8c8f7;transform:translateY(-1px);background:#faf8ff}
+  .chip::before{
+    content:"";
+    width:6px;height:6px;border-radius:50%;
+    background:linear-gradient(135deg,var(--brand1),var(--brand2));
+  }
+
+  .foot{
+    text-align:center;
+    color:#94a3b8;
+    font-size:.82rem;
+    padding:22px 10px 0;
+  }
+  .foot a{color:var(--brand2);text-decoration:none;font-weight:600}
+  .foot a:hover{text-decoration:underline}
+
+  ::selection{background:rgba(124,58,237,.25)}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:.01ms !important;transition-duration:.01ms !important}
+  }
+
+  @media (max-width:560px){
+    .wrap{padding:20px 14px 40px}
+    .card{padding:32px 18px 30px;border-radius:20px}
+    .stage{height:170px}
+    .actions{flex-direction:column}
+    .btn{width:100%;justify-content:center}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="topbar">
+    <a class="brand" href="index.html">
+      <img src="logo.png" alt="NERO AI">
+      <div class="name">NERO <span>AI</span></div>
+    </a>
+    <a class="back" href="index.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      الرئيسية
+    </a>
+  </div>
+
+  <section class="card">
+
+    <!-- Breaking 404 stage -->
+    <div class="stage" id="stage" aria-hidden="true">
+      <div class="stage-inner">
+        <div class="num" id="num404">404</div>
+
+        <!-- Cracks SVG -->
+        <svg class="cracks" viewBox="0 0 400 200" preserveAspectRatio="none" aria-hidden="true">
+          <path class="main" d="M60 20 L110 80 L95 130 L150 190"/>
+          <path class="main" d="M340 15 L300 70 L320 120 L280 175"/>
+          <path class="main" d="M180 10 L185 65 L160 100 L200 145 L190 190"/>
+          <path class="main" d="M250 20 L230 75 L255 110 L235 165"/>
+          <path class="main" d="M100 100 L160 100 M240 100 L300 100"/>
+          <path class="shard" d="M110 80 L130 65"/>
+          <path class="shard" d="M95 130 L130 140"/>
+          <path class="shard" d="M300 70 L275 55"/>
+          <path class="shard" d="M320 120 L290 135"/>
+          <path class="shard" d="M185 65 L210 55"/>
+          <path class="shard" d="M200 145 L175 160"/>
+          <path class="shard" d="M230 75 L210 90"/>
+          <path class="shard" d="M255 110 L280 105"/>
+        </svg>
+
+        <!-- Code particles zone (injected by JS) -->
+        <div class="code-zone" id="codeZone"></div>
+      </div>
+    </div>
+
+    <h1>الصفحة <span class="grad">مش موجودة</span></h1>
+    <p class="msg">
+      يبدو أنك وصلت لرابط غير صحيح، أو الصفحة انحذفت أو اتنقلت. ما في مشكلة — ارجع للصفحة الرئيسية وكمّل شغلك.
+    </p>
+
+    <div class="actions">
+      <a class="btn btn-primary" href="index.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m3 10 9-7 9 7v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
+        الرجوع للرئيسية
+      </a>
+    </div>
+
+    <div class="suggest">
+      <h3>روابط مفيدة</h3>
+      <div class="chips">
+        <a class="chip" href="index.html">المحادثة</a>
+        <a class="chip" href="privacy.html">سياسة الخصوصية</a>
+        <a class="chip" href="index.html">الرئيسية</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="foot">
+    © NERO AI — إذا بتعتقد إنه في خطأ، <a href="index.html">تواصل معنا</a>.
+  </div>
+
+</div>
+
+<script>
+(function(){
+  const stage = document.getElementById('stage');
+  const zone  = document.getElementById('codeZone');
+
+  // Real-looking code snippets (visual only — nothing is executed)
+  const snippets = [
+    '<span class="kw">const</span> <span class="fn">router</span> = <span class="kw">new</span> Router()',
+    '<span class="kw">if</span> (!page) <span class="kw">return</span> notFound()',
+    '<span class="fn">res</span>.<span class="fn">status</span>(<span class="str">404</span>)',
+    '<span class="kw">try</span> { <span class="fn">load</span>() } <span class="kw">catch</span> (e) {}',
+    '<span class="kw">export default</span> <span class="kw">async function</span> <span class="fn">fetch</span>(req)',
+    '<span class="cm">// صفحة غير موجودة</span>',
+    '<span class="fn">console</span>.<span class="fn">log</span>(<span class="str">"404"</span>)',
+    '<span class="kw">await</span> <span class="fn">db</span>.<span class="fn">query</span>(<span class="str">"SELECT *"</span>)',
+    '&lt;<span class="kw">Route</span> path=<span class="str">"*"</span> /&gt;',
+    '<span class="kw">function</span> <span class="fn">notFound</span>() { ... }',
+    '<span class="kw">import</span> { <span class="fn">Router</span> } <span class="kw">from</span> <span class="str">"nero"</span>',
+    '<span class="fn">document</span>.<span class="fn">title</span> = <span class="str">"404"</span>',
+    '<span class="kw">let</span> x = <span class="fn">Math</span>.<span class="fn">random</span>()',
+    '<span class="fn">setTimeout</span>(() =&gt; { ... }, <span class="str">1000</span>)',
+    '<span class="kw">return</span> { <span class="fn">ok</span>: <span class="kw">false</span>, <span class="fn">code</span>: <span class="str">404</span> }',
+    '<span class="fn">fetch</span>(<span class="str">"/api"</span>).<span class="fn">then</span>(r =&gt; r.<span class="fn">json</span>())'
+  ];
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Full cycle: crack → particles → clear → repeat
+  const LOOP_DELAY_AFTER_BURST = 2000; // ms of pause before next cycle
+
+  function burst(){
+    stage.classList.remove('shattered');
+    void stage.offsetWidth;               // restart animation
+    stage.classList.add('shattered');
+
+    zone.innerHTML = '';
+
+    const count = 10;
+    const picked = [...snippets].sort(() => Math.random() - .5).slice(0, count);
+
+    picked.forEach((html, i) => {
+      const el = document.createElement('div');
+      el.className = 'snippet';
+      el.innerHTML = html;
+
+      const startX = (Math.random() - .5) * 30;
+      const startY = (Math.random() - .5) * 20;
+
+      const angle = Math.random() * Math.PI * 2;
+      const dist  = 90 + Math.random() * 150;
+      const tx    = Math.cos(angle) * dist;
+      const ty    = Math.sin(angle) * dist * 0.7 - 30;
+
+      el.style.left = `calc(50% + ${startX}px)`;
+      el.style.top  = `calc(50% + ${startY}px)`;
+      el.style.setProperty('--tx', tx + 'px');
+      el.style.setProperty('--ty', ty + 'px');
+      el.style.setProperty('--rot', (Math.random() * 24 - 12) + 'deg');
+      el.style.animationDelay = (i * 35) + 'ms';
+
+      zone.appendChild(el);
+      el.addEventListener('animationend', () => el.remove());
+    });
+
+    // Schedule the next cycle after everything clears
+    setTimeout(() => {
+      stage.classList.remove('shattered');
+      zone.innerHTML = '';
+      // small gap before bursting again
+      setTimeout(burst, 500);
+    }, 1500 + LOOP_DELAY_AFTER_BURST);
+  }
+
+  if (!reduceMotion){
+    // Initial kickoff
+    setTimeout(burst, 700);
+  } else {
+    // Static fallback: just show the cracks
+    stage.classList.add('shattered');
+  }
+})();
+</script>
+</body>
+</html>

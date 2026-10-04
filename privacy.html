@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>سياسة الخصوصية — NERO AI</title>
+<link rel="icon" href="logo.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f5f7fb;
+    --card:#ffffff;
+    --text:#0f172a;
+    --muted:#475569;
+    --soft:#64748b;
+    --border:#e6ebf2;
+    --brand1:#3b82f6;
+    --brand2:#7c3aed;
+    --brand3:#a855f7;
+    --shadow:0 10px 30px -12px rgba(15,23,42,.15), 0 4px 12px -6px rgba(15,23,42,.08);
+    --radius:20px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    font-family:'Cairo','Segoe UI',Tahoma,Arial,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.9;
+    -webkit-font-smoothing:antialiased;
+    min-height:100vh;
+    position:relative;
+    overflow-x:hidden;
+  }
+  /* Background decoration */
+  body::before{
+    content:"";
+    position:fixed;
+    inset:-20% -10% auto -10%;
+    height:70vh;
+    background:
+      radial-gradient(60% 60% at 20% 20%, rgba(59,130,246,.18), transparent 60%),
+      radial-gradient(50% 50% at 80% 10%, rgba(168,85,247,.18), transparent 60%),
+      radial-gradient(40% 40% at 50% 30%, rgba(124,58,237,.10), transparent 60%);
+    filter:blur(10px);
+    z-index:-1;
+    pointer-events:none;
+  }
+
+  .wrap{max-width:820px;margin:0 auto;padding:32px 20px 80px}
+
+  /* Top bar */
+  .topbar{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:12px;margin-bottom:22px;
+  }
+  .brand{
+    display:flex;align-items:center;gap:12px;
+    text-decoration:none;color:inherit;
+  }
+  .brand img{
+    width:44px;height:44px;border-radius:12px;
+    box-shadow:0 6px 18px -6px rgba(59,130,246,.55);
+    background:#fff;
+  }
+  .brand .name{font-weight:800;font-size:1.05rem;letter-spacing:.2px}
+  .brand .name span{
+    background:linear-gradient(90deg,var(--brand1),var(--brand2));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .back{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:10px 16px;border-radius:999px;
+    background:#fff;border:1px solid var(--border);
+    color:var(--muted);text-decoration:none;font-size:.9rem;font-weight:600;
+    transition:.2s ease;
+    box-shadow:0 2px 6px -2px rgba(15,23,42,.06);
+  }
+  .back:hover{color:var(--brand2);border-color:#d8c8f7;transform:translateY(-1px)}
+
+  /* Hero */
+  .hero{
+    background:linear-gradient(135deg,#ffffff 0%, #fbfcff 100%);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:32px 28px;
+    box-shadow:var(--shadow);
+    position:relative;
+    overflow:hidden;
+    margin-bottom:22px;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;inset:0;
+    background:
+      radial-gradient(500px 120px at 100% 0%, rgba(124,58,237,.10), transparent 60%),
+      radial-gradient(400px 120px at 0% 100%, rgba(59,130,246,.10), transparent 60%);
+    pointer-events:none;
+  }
+  h1{
+    font-size:clamp(1.5rem, 2.4vw + 1rem, 2.05rem);
+    margin:0 0 10px;
+    font-weight:800;
+    letter-spacing:-.3px;
+    line-height:1.4;
+  }
+  h1 .grad{
+    background:linear-gradient(90deg,var(--brand1),var(--brand2) 60%, var(--brand3));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .lead{
+    color:var(--muted);
+    margin:0;
+    font-size:1rem;
+    max-width:60ch;
+  }
+
+  /* Cards */
+  .card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:26px 26px 22px;
+    box-shadow:var(--shadow);
+    margin-bottom:18px;
+    position:relative;
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .card:hover{transform:translateY(-2px);box-shadow:0 16px 40px -14px rgba(15,23,42,.18)}
+
+  .card-head{
+    display:flex;align-items:center;gap:14px;
+    margin-bottom:10px;
+  }
+  .icon{
+    flex:none;
+    width:44px;height:44px;border-radius:14px;
+    display:grid;place-items:center;
+    color:#fff;
+    background:linear-gradient(135deg,var(--brand1),var(--brand2));
+    box-shadow:0 8px 20px -8px rgba(124,58,237,.55);
+  }
+  .icon svg{width:22px;height:22px}
+  .icon.pink{background:linear-gradient(135deg,#ec4899,#a855f7);box-shadow:0 8px 20px -8px rgba(236,72,153,.5)}
+  .icon.amber{background:linear-gradient(135deg,#f59e0b,#ef4444);box-shadow:0 8px 20px -8px rgba(245,158,11,.5)}
+  .icon.teal{background:linear-gradient(135deg,#06b6d4,#3b82f6);box-shadow:0 8px 20px -8px rgba(6,182,212,.5)}
+
+  h2{
+    font-size:1.15rem;
+    margin:0;
+    font-weight:700;
+    color:var(--text);
+  }
+
+  ul.list{list-style:none;padding:0;margin:6px 0 0}
+  ul.list li{
+    position:relative;
+    padding:10px 34px 10px 0;
+    color:var(--muted);
+    border-bottom:1px dashed var(--border);
+  }
+  ul.list li:last-child{border-bottom:0}
+  ul.list li::before{
+    content:"";
+    position:absolute;right:10px;top:20px;
+    width:8px;height:8px;border-radius:50%;
+    background:linear-gradient(135deg,var(--brand1),var(--brand2));
+    box-shadow:0 0 0 4px rgba(59,130,246,.12);
+  }
+
+  b, strong{color:var(--text);font-weight:700}
+
+  .note{
+    display:flex;gap:12px;align-items:flex-start;
+    margin-top:14px;
+    padding:12px 14px;
+    border-radius:14px;
+    background:linear-gradient(90deg, rgba(245,158,11,.10), rgba(239,68,68,.08));
+    border:1px solid rgba(245,158,11,.25);
+    color:#7c2d12;
+    font-size:.93rem;
+  }
+  .note svg{flex:none;width:20px;height:20px;color:#d97706;margin-top:3px}
+
+  /* Footer CTA */
+  .footer{
+    margin-top:26px;
+    display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;
+    padding:20px 22px;
+    border-radius:var(--radius);
+    background:linear-gradient(135deg,#0f172a,#1e293b);
+    color:#cbd5e1;
+    box-shadow:var(--shadow);
+  }
+  .footer p{margin:0;font-size:.92rem}
+  .footer a.cta{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:11px 18px;border-radius:999px;
+    background:linear-gradient(135deg,var(--brand1),var(--brand2));
+    color:#fff;text-decoration:none;font-weight:700;font-size:.9rem;
+    box-shadow:0 10px 24px -10px rgba(124,58,237,.7);
+    transition:.2s ease;
+  }
+  .footer a.cta:hover{transform:translateY(-2px);filter:brightness(1.05)}
+
+  ::selection{background:rgba(124,58,237,.25)}
+
+  @media (max-width:560px){
+    .wrap{padding:20px 14px 60px}
+    .hero{padding:24px 20px}
+    .card{padding:20px 18px}
+    .footer{flex-direction:column;align-items:flex-start}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="topbar">
+    <a class="brand" href="index.html">
+      <img src="logo.png" alt="NERO AI">
+      <div class="name">NERO <span>AI</span></div>
+    </a>
+    <a class="back" href="index.html">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      رجوع
+    </a>
+  </div>
+
+  <section class="hero">
+    <h1>سياسة <span class="grad">الخصوصية</span></h1>
+    <p class="lead">
+      في NERO AI نهتم بخصوصيتك. نوضح لك هنا بأبسط شكل شو بنخزّن، وين، وشو بينرسل لجهات خارجية — حتى تكون دايماً مطمئن.
+    </p>
+  </section>
+
+  <section class="card">
+    <div class="card-head">
+      <div class="icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+      </div>
+      <h2>نظرة سريعة</h2>
+    </div>
+    <p style="color:var(--muted);margin:0">
+      محادثاتك بتنحفظ في حسابك (نص فقط) عشان تفتحها من أي جهاز، والرسائل بتمر عبر وسيط (Cloudflare Worker) لحد ما توصل لمزوّد النموذج.
+    </p>
+  </section>
+
+  <section class="card">
+    <div class="card-head">
+      <div class="icon teal" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.7 4 3 9 3s9-1.3 9-3V5"/><path d="M3 12c0 1.7 4 3 9 3s9-1.3 9-3"/></svg>
+      </div>
+      <h2>شو بنخزّن وين؟</h2>
+    </div>
+    <ul class="list">
+      <li><b>تسجيل الدخول:</b> بنستخدم تسجيل الدخول بحساب Google. بنستلم معرّف حسابك وبريدك، وبنخزّن معرّف الحساب وعدد رسائلك اليومية في قاعدة بيانات (Cloudflare D1) لتطبيق الحد اليومي. جلسة الدخول بتنحفظ في متصفحك لمدة 30 يوم.</li>
+      <li><b>المحادثات والذاكرة:</b> نص المحادثات (آخر 50 محادثة) بيتخزّن في قاعدة البيانات (Cloudflare D1) مربوط بحسابك عشان تظهر على كل أجهزتك، وبنسخة في متصفحك. الصور (المرفقة والمولَّدة) بتضل على الجهاز اللي أنشأتها عليه ولا بتنتقل. لما تحذف محادثة بتنحذف من حسابك ومن كل أجهزتك، وتسجيل الخروج بيحذف النسخة اللي على هذا الجهاز.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <div class="card-head">
+      <div class="icon pink" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6"/><path d="m4.93 10.93 4.24 4.24"/><path d="M2 18h6"/><path d="m17.07 10.93-4.24 4.24"/><path d="M22 18h-6"/><circle cx="12" cy="18" r="4"/></svg>
+      </div>
+      <h2>شو بيروح لجهات خارجية؟</h2>
+    </div>
+    <ul class="list">
+      <li><b>رسائلك والملفات المرفقة:</b> بتنرسل عبر الوسيط تبعنا إلى Groq أو Google Gemini لتوليد الرد. ما بنخزّنها، لكن كل مزوّد له سياسته.</li>
+      <li><b>وصف الصور:</b> بيروح إلى خدمة توليد الصور (Cloudflare Workers AI) لتوليد الصورة.</li>
+      <li>الموقع بيحمّل مكتبات وخطوط من CDN خارجية (jsDelivr وcdnjs وGoogle Fonts).</li>
+    </ul>
+
+    <div class="note">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      <div><b>تنبيه:</b> الخطة المجانية من Gemini ممكن Google تستخدم فيها البيانات لتحسين خدماتها، فلا ترسل بيانات حساسة.</div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card-head">
+      <div class="icon amber" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7c.6.4 1 1.1 1 1.8V18h6v-1.5c0-.7.4-1.4 1-1.8A7 7 0 0 0 12 2z"/></svg>
+      </div>
+      <h2>نصائح</h2>
+    </div>
+    <ul class="list">
+      <li>لا ترسل كلمات سر أو بيانات حساسة في المحادثة.</li>
+      <li>لا تستخدم الموقع من جهاز مشترك بدون ما تسجّل الخروج وتمسح المحادثات بعد الانتهاء.</li>
+      <li>لحذف كل بيانات حسابك المخزّنة تواصل معنا.</li>
+    </ul>
+  </section>
+
+  <div class="footer">
+    <p>آخر تحديث لهذه السياسة قد يطرأ — تابعنا لأي تغييرات جوهرية.</p>
+    <a class="cta" href="index.html">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+      الرجوع إلى NERO AI
+    </a>
+  </div>
+
+</div>
+</body>
+</html>
